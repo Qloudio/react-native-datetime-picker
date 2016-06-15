@@ -1,13 +1,10 @@
 'use strict';
 
-var React = require('react-native');
-var {
-    Platform
-} = React;
+import React from 'react';
+import {Platform} from 'react-native';
 
-var DateTimePickerAndroid = require('./android/DateTimePicker.js');
-var DateTimePickerIOS= require('./ios/DateTimePicker.js');
-var DateTimePicker = (Platform.OS === 'android') ? DateTimePickerAndroid : DateTimePickerIOS;
+const DateTimePicker = Platform.OS === 'android' ?
+  require('./android/DateTimePicker.js') : require('./ios/DateTimePicker.js');
 
 
 module.exports = DateTimePicker;

@@ -2,6 +2,9 @@
 A cross-platform datetime picker for React Native that support both Android and iOS.
 Uses DatePickerIOS component for iOS and DatePickerAndroid API for Android.
 
+## Fixes
+* fixed to work with react native v0.27
+
 ## Installation
 ```sh
 npm install react-native-datetime-picker --save

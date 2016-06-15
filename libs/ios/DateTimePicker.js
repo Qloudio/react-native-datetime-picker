@@ -6,28 +6,23 @@
 */
 'use strict';
 
-var React = require('react-native');
-var {
-    StyleSheet,
-    View,
-    DatePickerIOS,
-    TouchableOpacity,
-    TouchableHighlight,
-    Navigator,
-    Dimensions,
-    Text,
-} = React;
+import React, {Component} from 'react';
+import {StyleSheet, View, DatePickerIOS, TouchableOpacity, TouchableHighlight, Navigator, Dimensions, Text} from 'react-native';
 
 var Overlay = require('./overlay.js');
 
-module.exports =  React.createClass({
-    getInitialState() {
-        return {
-            visible: false,
-            mode: 'date',
-            date: new Date(),
-        };
-    },
+class DP extends Component {
+
+    constructor(props, context) {
+      super(props, context)
+
+      this.state = {
+        visible: false,
+        mode: 'date',
+        date: new Date(),
+      };
+    }
+
     showDatePicker(date, callback) {
         this.callback = callback;
         date = date || new Date();
@@ -37,7 +32,8 @@ module.exports =  React.createClass({
             visible: true,
             date: date,
         });
-    },
+    }
+
     showTimePicker(date, callback) {
         this.callback = callback;
         date = date || new Date();
@@ -47,21 +43,25 @@ module.exports =  React.createClass({
             visible: true,
             date: date,
         });
-    },
+    }
+
     onClose() {
         this.setState({
             visible: false,
         });
-    },
+    }
+
     onComplete() {
         this.setState({
             visible: false,
         });
         this.callback(this.state.date);
-    },
+    }
+
     onDateChange(date) {
         this.setState({date: date});
-    },
+    }
+
     render() {
         return this.state.visible && (
             <Overlay visible={this.state.visible}>
@@ -90,8 +90,8 @@ module.exports =  React.createClass({
                 </View>
             </Overlay>
         );
-    },
-});
+    }
+}
 
 var styles = StyleSheet.create({
     actionSheetContainer: {

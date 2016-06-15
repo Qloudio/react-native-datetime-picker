@@ -1,16 +1,15 @@
 'use strict';
 
-var React = require('react-native');
-var {
-    View,
-    NativeModules,
-} = React;
+import React, {Component} from 'react';
+import {View} from 'react-native';
 
-var RCTDateTimePicker= NativeModules.DateTimePicker;
+const NativeModules = require('NativeModules');
+const RCTDateTimePicker = NativeModules.DateTimePicker;
 
 
 
-module.exports =  React.createClass({
+class DP extends Component {
+
     showDatePicker(date, callback) {
         date = date || new Date();
         var options = {year:date.getFullYear(), month:date.getMonth(), day:date.getDate()};
@@ -20,7 +19,8 @@ module.exports =  React.createClass({
             date.setDate(day);
             callback(date);
         });
-    },
+    }
+
     showTimePicker(date, callback) {
         date = date || new Date();
         var options = {hour:date.getHours(), minute:date.getMinutes()};
@@ -29,10 +29,13 @@ module.exports =  React.createClass({
             date.setMinutes(minute);
             callback(date);
         });
-    },
+    }
+
     render() {
         return (
             null
         )
     }
-});
+}
+
+module.exports = DP
