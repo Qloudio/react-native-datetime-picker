@@ -11,11 +11,14 @@ const DEFAULT_ANIMATE_TIME = 200;
 
 class OV extends Component {
 
-    getInitialState() {
-        return {
-            fadeAnim: new Animated.Value(0),
-        };
+    constructor(props, context) {
+      super(props, context)
+
+      this.state = {
+        fadeAnim: new Animated.Value(0)
+      };
     }
+    
 
     componentWillMount() {
         return Animated.timing(this.state.fadeAnim, {
