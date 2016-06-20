@@ -69,16 +69,16 @@ class DP extends Component {
                     <TouchableOpacity
                         style={styles.touchableOpacity}
                         activeOpacity={1}
-                        onPress={this.onClose} />
+                        onPress={this.onClose.bind(this)} />
                     <DatePickerIOS
                         date={this.state.date}
                         mode={this.state.mode}
-                        onDateChange={this.onDateChange}
+                        onDateChange={this.onDateChange.bind(this)}
                         style = {styles.datePicker}
                         />
                     <View style={styles.separator}/>
                     <TouchableHighlight
-                        onPress={this.onComplete}
+                        onPress={this.onComplete.bind(this)}
                         underlayColor="#f4f7f7"
                         style={styles.button}>
                         <Text style={styles.buttonText}>Select</Text>
@@ -86,7 +86,7 @@ class DP extends Component {
                     <TouchableOpacity
                         style={styles.touchableOpacity}
                         activeOpacity={1}
-                        onPress={this.onClose} />
+                        onPress={this.onClose.bind(this)} />
                 </View>
             </Overlay>
         );
@@ -119,3 +119,5 @@ var styles = StyleSheet.create({
         backgroundColor: '#CCC'
     },
 });
+
+module.exports = DP
