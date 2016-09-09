@@ -10,17 +10,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
-import android.app.Activity;
 
 public class RCTDateTimePickerPackage implements ReactPackage {
-	
-    private Activity activity;
-	private RCTDateTimePicker mModuleInstance;
 
-	public RCTDateTimePickerPackage() {
-		super();
-        
-	}
+    private RCTDateTimePicker mModuleInstance;
+
+    public RCTDateTimePickerPackage() {
+      super();
+    }
 
     @Override
     public List<NativeModule> createNativeModules(
