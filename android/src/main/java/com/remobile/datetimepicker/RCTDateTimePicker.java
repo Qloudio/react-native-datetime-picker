@@ -10,7 +10,7 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReadableMap;
 
 public class RCTDateTimePicker extends ReactContextBaseJavaModule {
-    private Activity activity;
+
 
     public RCTDateTimePicker(ReactApplicationContext reactContext) {
         super(reactContext);
