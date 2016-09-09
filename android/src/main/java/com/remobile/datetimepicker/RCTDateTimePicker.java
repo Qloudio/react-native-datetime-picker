@@ -11,10 +11,8 @@ import com.facebook.react.bridge.ReadableMap;
 
 public class RCTDateTimePicker extends ReactContextBaseJavaModule {
 
-
     public RCTDateTimePicker(ReactApplicationContext reactContext) {
         super(reactContext);
-
     }
 
     @Override
