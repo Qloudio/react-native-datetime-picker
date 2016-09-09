@@ -12,9 +12,9 @@ import com.facebook.react.bridge.ReadableMap;
 public class RCTDateTimePicker extends ReactContextBaseJavaModule {
     private Activity activity;
 
-    public RCTDateTimePicker(ReactApplicationContext reactContext, Activity activity) {
+    public RCTDateTimePicker(ReactApplicationContext reactContext) {
         super(reactContext);
-        this.activity = activity;
+
     }
 
     @Override
@@ -25,12 +25,12 @@ public class RCTDateTimePicker extends ReactContextBaseJavaModule {
     @ReactMethod
     public void showDatePicker(ReadableMap options, Callback callback) {
         DialogFragment datePicker = new DatePicker(options, callback);
-        datePicker.show(activity.getFragmentManager(), "datePicker");
+        datePicker.show(getCurrentActivity().getFragmentManager(), "datePicker");
     }
 
     @ReactMethod
     public void showTimePicker(ReadableMap options, Callback callback) {
         DialogFragment timePicker = new TimePicker(options, callback);
-        timePicker.show(activity.getFragmentManager(), "timePicker");
+        timePicker.show(getCurrentActivity().getFragmentManager(), "timePicker");
     }
 }
